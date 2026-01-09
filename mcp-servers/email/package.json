@@ -1,0 +1,29 @@
+{
+  "name": "@claude-studio/mcp-email",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "mcp-email-server": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "dotenv": "^16.3.1",
+    "imap": "^0.8.19",
+    "mailparser": "^3.6.5",
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "@types/imap": "^0.8.40",
+    "@types/node": "^20.10.0",
+    "@types/nodemailer": "^6.4.14",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}

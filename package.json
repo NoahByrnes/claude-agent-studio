@@ -1,0 +1,33 @@
+{
+  "name": "claude-agent-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deployment foundry for autonomous Claude agents",
+  "workspaces": [
+    "backend",
+    "agent-runtime",
+    "mcp-servers/*",
+    "frontend",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "build:backend": "cd backend && npm install && npm run build",
+    "build:runtime": "cd agent-runtime && npm install && npm run build",
+    "build:types": "cd packages/shared-types && npm install && npm run build",
+    "start:backend": "cd backend && npm start",
+    "start:worker": "cd agent-runtime && npm start",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "clean": "npm run clean --workspaces --if-present && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}
